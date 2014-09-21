@@ -11,16 +11,10 @@
 
 @interface TTHTTPRequestFactory : NSObject
 
-+ (TTHTTPRequestFactory *)sharedInstance;
-
 + (TTHTTPRequest *)GET:(NSString *)URLString
-             parameters:(NSDictionary *)parameters
-               success:(HTTPCompleteBlock) success
-               failure:(HTTPCompleteBlock)failure;
+            parameters:(NSDictionary *)parameters;
 
 + (TTHTTPRequest *)POST:(NSString *)URLString
-               JSONBody:(id)JSONBody
-                success:(HTTPCompleteBlock)success
-                failure:(HTTPCompleteBlock)failure;
+               JSONBody:(id)JSONBody;
 
 @end

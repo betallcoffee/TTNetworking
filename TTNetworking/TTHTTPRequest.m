@@ -22,21 +22,12 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 
 @synthesize responseObject = _responseObject;
 
-- (id)initWithRequest:(NSURLRequest *)request withSuccess:(HTTPCompleteBlock)success andFailure:(HTTPCompleteBlock)failure{
-    self = [super initWithRequest:request];
+- (id)initWithRequest:(NSMutableURLRequest *)request {
+    self = [super init];
     if (self) {
+        _request = request;
         _hasRequestBody = NO;
-        __weak typeof(self) weakSelf = self;
-        [super setCompletionBlockWithSuccess:^{
-            if (success) {
-                success(weakSelf);
-            }
-        } failure:^{
-            if (failure) {
-                failure(weakSelf);
-            }
-            
-        }];
+        _responseData = [[NSMutableData alloc] init];
         return self;
     }
     return nil;
@@ -59,7 +50,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
         NSString *url = [[self.request.URL absoluteString] stringByAppendingFormat:self.request.URL.query ? @"&%@" : @"?%@" , queryString];
         self.request.URL = [[NSURL alloc] initWithString:url];
     } else {
-        NSString *charset = (__bridge_transfer NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(stringEncoding));
+        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(stringEncoding));
         [self.request setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
         [self.request setHTTPBody:[queryString dataUsingEncoding:stringEncoding]];
     }
@@ -69,7 +60,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
     NSParameterAssert(JSONBody);
     
     if (_hasRequestBody) {
-        NSString *charset = (__bridge_transfer NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(stringEncoding));
+        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(stringEncoding));
         [self.request setValue:[NSString stringWithFormat:@"application/json; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
         [self.request setHTTPBody:[NSJSONSerialization dataWithJSONObject:JSONBody options:NSJSONWritingPrettyPrinted error:error]];
     }
@@ -79,7 +70,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
     NSParameterAssert(plistBody);
     
     if (_hasRequestBody) {
-        NSString *charset = (__bridge_transfer NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertEncodingToNSStringEncoding(stringEncoding));
+        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertEncodingToNSStringEncoding(stringEncoding));
         [self.request setValue:[NSString stringWithFormat:@"application/x-plist; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
         [self.request setHTTPBody:[NSPropertyListSerialization dataWithPropertyList:plistBody
                                                                              format:NSPropertyListXMLFormat_v1_0

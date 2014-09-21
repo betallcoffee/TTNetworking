@@ -6,7 +6,7 @@
 //
 //
 
-#import "TTURLConnectionRequest.h"
+#import "TTURLConnection.h"
 
 @protocol TTHTTPRequestSerialization <NSObject>
 
@@ -20,17 +20,20 @@
 
 @end
 
-@interface TTHTTPRequest : TTURLConnectionRequest
+@interface TTHTTPRequest : NSObject
 
-typedef void (^HTTPCompleteBlock)(TTHTTPRequest *);
-
+@property (nonatomic, readonly) NSString *tag;
+@property (readonly, nonatomic) NSMutableURLRequest *request;
 @property (nonatomic, assign) BOOL hasRequestBody;
 @property (nonatomic, readonly) NSString *statusCode;
+@property (nonatomic, strong) NSURLResponse *response;
+@property (nonatomic, readonly) NSMutableData *responseData;
 @property (nonatomic, readonly) id responseObject;
 @property (nonatomic, strong) id<TTHTTPRequestSerialization>requestSerialization;
 @property (nonatomic, strong) id<TTHTTPResponseSerialization>responseSerialization;
 
-- (id)initWithRequest:(NSMutableURLRequest *)request withSuccess:(HTTPCompleteBlock)success andFailure:(HTTPCompleteBlock)failure;
+- (id)initWithRequest:(NSMutableURLRequest *)request;
+
 - (void)setParameters:(NSDictionary *)parameters withStringEncoding:(NSStringEncoding)stringEncoding error:(NSError *__autoreleasing*)error;
 - (void)setJSONBody:(id)JSONBody withStringEncoding:(NSStringEncoding)stringEncoding error:(NSError *__autoreleasing*)error;
 - (void)setPlistBody:(id)plistBody withStringencoding:(NSStringEncoding)stringEncoding error:(NSError *__autoreleasing*)error;

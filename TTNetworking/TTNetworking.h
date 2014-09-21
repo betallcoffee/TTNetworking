@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Availability.h>
-#import "TTURLConnectionRequest.h"
+#import "TTURLConnection.h"
 #import "TTHTTPRequest.h"
 #import "TTHTTPRequestFactory.h"
+#import "TTHTTPClient.h"
 
