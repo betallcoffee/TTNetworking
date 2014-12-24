@@ -26,9 +26,8 @@
         _isCanceled = NO;
         _request = request;
         _completion = completion;
-        return self;
     }
-    return nil;
+    return self;
 }
 
 - (void)start {

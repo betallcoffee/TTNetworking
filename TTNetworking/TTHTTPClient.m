@@ -26,23 +26,22 @@
                                                         selector:@selector(networkRequestThreadEntry:)
                                                           object:nil];
         [_networkRequestThread start];
-        return self;
     }
-    return nil;
+    return self;
 }
 
 - (void)networkRequestThreadEntry:(id)__unused object {
     NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
     [currentRunLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-    @autoreleasepool {
-        do {
+    do {
+        @autoreleasepool {
             @try {
                 [currentRunLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             } @catch (NSException *e) {
                 TTHTTPLogE(@"TTHTTPRequestThread : %@", [e callStackSymbols]);
             }
-        }while (true);
-    }
+        }
+    } while (true);
 }
 
 - (void)execute:(TTHTTPRequest *)request completion:(HTTPCompletion)completion {

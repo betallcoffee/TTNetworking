@@ -21,7 +21,6 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 @implementation TTHTTPRequest
 
 @synthesize responseObject = _responseObject;
-@synthesize responseString = _responseString;
 
 - (id)initWithRequest:(NSMutableURLRequest *)request {
     self = [super init];
@@ -29,9 +28,8 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
         _request = request;
         _hasRequestBody = NO;
         _responseData = [[NSMutableData alloc] init];
-        return self;
     }
-    return nil;
+    return self;
 }
 
 - (void)setParameters:(NSDictionary *)parameters withStringEncoding:(NSStringEncoding)stringEncoding error:(NSError *__autoreleasing *)error{
@@ -71,7 +69,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
     NSParameterAssert(plistBody);
     
     if (_hasRequestBody) {
-        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertEncodingToNSStringEncoding(stringEncoding));
+        NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(stringEncoding));
         [self.request setValue:[NSString stringWithFormat:@"application/x-plist; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
         [self.request setHTTPBody:[NSPropertyListSerialization dataWithPropertyList:plistBody
                                                                              format:NSPropertyListXMLFormat_v1_0
@@ -87,10 +85,6 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
        _responseObject = [self.responseSerialization responseObjectFor:self.response withData:self.responseData error:&error];
     }
     return _responseObject;
-}
-
-- (NSString *)responseString {
-    return [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
 }
 
 @end
