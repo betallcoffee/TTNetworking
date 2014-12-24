@@ -34,15 +34,15 @@
 - (void)networkRequestThreadEntry:(id)__unused object {
     NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
     [currentRunLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-    do {
-        @autoreleasepool {
+    @autoreleasepool {
+        do {
             @try {
                 [currentRunLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             } @catch (NSException *e) {
                 TTHTTPLogE(@"TTHTTPRequestThread : %@", [e callStackSymbols]);
             }
-        }
-    } while (true);
+        }while (true);
+    }
 }
 
 - (void)execute:(TTHTTPRequest *)request completion:(HTTPCompletion)completion {

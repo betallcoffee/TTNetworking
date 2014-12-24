@@ -16,8 +16,9 @@
 		EC3A0B7C1879A87900F321E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3A0B7B1879A87900F321E8 /* ViewController.m */; };
 		EC3A0B7E1879A87900F321E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC3A0B7D1879A87900F321E8 /* Images.xcassets */; };
 		EC3A0BA2187C17FA00F321E8 /* TTHTTPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3A0B9F187C17FA00F321E8 /* TTHTTPRequestFactory.m */; };
-		EC3A0BA3187C17FA00F321E8 /* TTURLConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3A0BA1187C17FA00F321E8 /* TTURLConnectionRequest.m */; };
 		EC3A0BA6188BE1FD00F321E8 /* TTHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3A0BA5188BE1FC00F321E8 /* TTHTTPRequest.m */; };
+		EC84BD7D19F117D800378B0B /* TTHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC84BD7919F117D800378B0B /* TTHTTPClient.m */; };
+		EC84BD7E19F117D800378B0B /* TTURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EC84BD7C19F117D800378B0B /* TTURLConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +39,13 @@
 		EC3A0B9B1879A94800F321E8 /* TTNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNetworking.h; sourceTree = "<group>"; };
 		EC3A0B9E187C17FA00F321E8 /* TTHTTPRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPRequestFactory.h; sourceTree = "<group>"; };
 		EC3A0B9F187C17FA00F321E8 /* TTHTTPRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPRequestFactory.m; sourceTree = "<group>"; };
-		EC3A0BA0187C17FA00F321E8 /* TTURLConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLConnectionRequest.h; sourceTree = "<group>"; };
-		EC3A0BA1187C17FA00F321E8 /* TTURLConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTURLConnectionRequest.m; sourceTree = "<group>"; };
 		EC3A0BA4188BE1FC00F321E8 /* TTHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPRequest.h; sourceTree = "<group>"; };
 		EC3A0BA5188BE1FC00F321E8 /* TTHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPRequest.m; sourceTree = "<group>"; };
+		EC84BD7819F117D800378B0B /* TTHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPClient.h; sourceTree = "<group>"; };
+		EC84BD7919F117D800378B0B /* TTHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPClient.m; sourceTree = "<group>"; };
+		EC84BD7A19F117D800378B0B /* TTHTTPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPLog.h; sourceTree = "<group>"; };
+		EC84BD7B19F117D800378B0B /* TTURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLConnection.h; sourceTree = "<group>"; };
+		EC84BD7C19F117D800378B0B /* TTURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTURLConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +118,15 @@
 		EC3A0B9A1879A94800F321E8 /* TTNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				EC84BD7819F117D800378B0B /* TTHTTPClient.h */,
+				EC84BD7919F117D800378B0B /* TTHTTPClient.m */,
+				EC84BD7A19F117D800378B0B /* TTHTTPLog.h */,
+				EC84BD7B19F117D800378B0B /* TTURLConnection.h */,
+				EC84BD7C19F117D800378B0B /* TTURLConnection.m */,
 				EC3A0BA4188BE1FC00F321E8 /* TTHTTPRequest.h */,
 				EC3A0BA5188BE1FC00F321E8 /* TTHTTPRequest.m */,
 				EC3A0B9E187C17FA00F321E8 /* TTHTTPRequestFactory.h */,
 				EC3A0B9F187C17FA00F321E8 /* TTHTTPRequestFactory.m */,
-				EC3A0BA0187C17FA00F321E8 /* TTURLConnectionRequest.h */,
-				EC3A0BA1187C17FA00F321E8 /* TTURLConnectionRequest.m */,
 				EC3A0B9B1879A94800F321E8 /* TTNetworking.h */,
 			);
 			name = TTNetworking;
@@ -205,10 +212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC3A0B7C1879A87900F321E8 /* ViewController.m in Sources */,
-				EC3A0BA3187C17FA00F321E8 /* TTURLConnectionRequest.m in Sources */,
 				EC3A0BA2187C17FA00F321E8 /* TTHTTPRequestFactory.m in Sources */,
 				EC3A0BA6188BE1FD00F321E8 /* TTHTTPRequest.m in Sources */,
 				EC3A0B731879A87900F321E8 /* AppDelegate.m in Sources */,
+				EC84BD7E19F117D800378B0B /* TTURLConnection.m in Sources */,
+				EC84BD7D19F117D800378B0B /* TTHTTPClient.m in Sources */,
 				EC3A0B6F1879A87900F321E8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +356,7 @@
 				EC3A0B961879A87900F321E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

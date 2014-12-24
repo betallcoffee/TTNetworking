@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 {
+    TTHTTPClient *_httpClient;
     TTHTTPRequest *_request;
     NSMutableArray *_requests;
 }
@@ -23,6 +24,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _httpClient = [[TTHTTPClient alloc] init];
     _requests = [[NSMutableArray alloc] initWithCapacity:5];
     for (int i = 0; i < 20; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, i * 40, 320, 40)];
@@ -31,14 +33,16 @@
         [self.view addSubview:label];
         self.view.backgroundColor = [UIColor whiteColor];
         
-        TTHTTPRequest *request = [TTHTTPRequestFactory GET:@"http://www.baidu.com" parameters:nil success:^(TTHTTPRequest *request) {
-            NSLog(@"viewController request success");
-            [label setText:request.responseString];
-        } failure:^(TTHTTPRequest *request) {
-            NSLog(@"viewController request error:%@", request.error);
-        }];
-        [request start];
+        TTHTTPRequest *request = [TTHTTPRequestFactory GET:@"http://www.baidu.com" parameters:nil];
         [_requests addObject:request];
+        [_httpClient execute:request completion:^(TTHTTPRequest *request, NSError *error, BOOL isSuccess) {
+            if (isSuccess) {
+                NSLog(@"viewController request success %d", i);
+                [label setText:request.responseString];
+            } else {
+                NSLog(@"viewController request error:%@", error);
+            }
+        }];
     }
     
 }

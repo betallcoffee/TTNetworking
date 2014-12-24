@@ -21,6 +21,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 @implementation TTHTTPRequest
 
 @synthesize responseObject = _responseObject;
+@synthesize responseString = _responseString;
 
 - (id)initWithRequest:(NSMutableURLRequest *)request {
     self = [super init];
@@ -86,6 +87,10 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
        _responseObject = [self.responseSerialization responseObjectFor:self.response withData:self.responseData error:&error];
     }
     return _responseObject;
+}
+
+- (NSString *)responseString {
+    return [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
 }
 
 @end
