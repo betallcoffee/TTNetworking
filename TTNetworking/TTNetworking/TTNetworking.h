@@ -10,6 +10,5 @@
 #import <Availability.h>
 #import "TTURLConnection.h"
 #import "TTHTTPRequest.h"
-#import "TTHTTPRequestFactory.h"
 #import "TTHTTPClient.h"
 

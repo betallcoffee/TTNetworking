@@ -33,7 +33,7 @@
         [self.view addSubview:label];
         self.view.backgroundColor = [UIColor whiteColor];
         
-        TTHTTPRequest *request = [TTHTTPRequestFactory GET:@"http://www.baidu.com" parameters:nil];
+        TTHTTPRequest *request = [TTHTTPRequest GET:@"http://www.baidu.com" parameters:nil];
         [_requests addObject:request];
         [_httpClient execute:request completion:^(TTHTTPRequest *request, NSError *error, BOOL isSuccess) {
             if (isSuccess) {

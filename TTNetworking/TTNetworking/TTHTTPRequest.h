@@ -33,6 +33,12 @@
 @property (nonatomic, strong) id<TTHTTPRequestSerialization>requestSerialization;
 @property (nonatomic, strong) id<TTHTTPResponseSerialization>responseSerialization;
 
++ (TTHTTPRequest *)GET:(NSString *)URLString
+            parameters:(NSDictionary *)parameters;
+
++ (TTHTTPRequest *)POST:(NSString *)URLString
+               JSONBody:(id)JSONBody;
+
 - (id)initWithRequest:(NSMutableURLRequest *)request;
 
 - (void)setParameters:(NSDictionary *)parameters withStringEncoding:(NSStringEncoding)stringEncoding error:(NSError *__autoreleasing*)error;
