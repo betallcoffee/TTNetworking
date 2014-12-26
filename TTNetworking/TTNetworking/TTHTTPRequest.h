@@ -29,6 +29,7 @@
 @property (nonatomic, strong) NSURLResponse *response;
 @property (nonatomic, readonly) NSMutableData *responseData;
 @property (nonatomic, readonly) id responseObject;
+@property (nonatomic, readonly) NSString *responseString;
 @property (nonatomic, strong) id<TTHTTPRequestSerialization>requestSerialization;
 @property (nonatomic, strong) id<TTHTTPResponseSerialization>responseSerialization;
 

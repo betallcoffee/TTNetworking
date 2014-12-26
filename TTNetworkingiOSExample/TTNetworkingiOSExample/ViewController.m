@@ -38,7 +38,7 @@
         [_httpClient execute:request completion:^(TTHTTPRequest *request, NSError *error, BOOL isSuccess) {
             if (isSuccess) {
                 NSLog(@"viewController request success %d", i);
-                [label setText:request.responseString];
+//                [label setText:request.responseString];
             } else {
                 NSLog(@"viewController request error:%@", error);
             }
