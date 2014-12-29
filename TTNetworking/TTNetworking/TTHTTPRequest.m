@@ -20,6 +20,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 
 @implementation TTHTTPRequest
 
+@synthesize response = _response;
 @synthesize responseObject = _responseObject;
 @synthesize responseString = _responseString;
 
@@ -40,7 +41,6 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
         [httpRequest setParameters:parameters withStringEncoding:NSUTF8StringEncoding error:&error];
     }
     
-    httpRequest.responseSerialization = [[TTJSONResponseSerialization alloc] init];
     return httpRequest;
 }
 
@@ -58,11 +58,8 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
     httpRequest.hasRequestBody = YES;
     NSError *error;
     [httpRequest setJSONBody:JSONBody withStringEncoding:NSUTF8StringEncoding error:&error];
-    httpRequest.responseSerialization = [[TTJSONResponseSerialization alloc] init];
     return httpRequest;
 }
-
-
 
 - (id)initWithRequest:(NSMutableURLRequest *)request {
     self = [super init];
@@ -76,10 +73,6 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 
 - (void)setParameters:(NSDictionary *)parameters withStringEncoding:(NSStringEncoding)stringEncoding error:(NSError *__autoreleasing *)error{
     NSParameterAssert(parameters);
-    
-    if (self.requestSerialization) {
-        [self.requestSerialization request:self.request withParam:parameters error:error];
-    }
     
     NSMutableArray *queryArray = [[NSMutableArray alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -118,13 +111,27 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
                                                                             options:0
                                                                               error:error]];
     }
-    
+}
+
+- (void)setResponse:(NSURLResponse *)response {
+    _response = response;
+    if ([_response.MIMEType compare:@"text/html"] == NSOrderedSame) {
+        self.responseSerialization = [[TTStringSerialization alloc] init];
+    } else if ([_response.MIMEType compare:@"application/json"]  == NSOrderedSame) {
+        self.responseSerialization = [[TTJSONSerialization alloc] init];
+    } else if ([_response.MIMEType compare:@"application/x-plist"]  == NSOrderedSame) {
+        self.responseSerialization = [[TTXMLSerialization alloc] init];
+    } else {
+        self.responseSerialization = nil;
+    }
 }
 
 - (id)responseObject {
     NSError *error;
-    if (self.responseSerialization) {
+    if (self.responseSerialization != nil) {
        _responseObject = [self.responseSerialization responseObjectFor:self.response withData:self.responseData error:&error];
+    } else {
+        _responseObject = self.responseData;
     }
     return _responseObject;
 }
@@ -138,8 +145,19 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 }
 
 @end
+                                      
+@implementation TTStringSerialization
 
-@implementation TTJSONResponseSerialization
+- (id)responseObjectFor:(NSURLResponse *)response withData:(NSData *)data error:(NSError *__autoreleasing *)error {
+    NSParameterAssert(response.textEncodingName);
+    NSParameterAssert(data);
+    NSStringEncoding stringEncoding = CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)response.textEncodingName));
+    return [[NSString alloc] initWithData:data encoding:stringEncoding];
+}
+
+@end
+
+@implementation TTJSONSerialization
 
 - (id)responseObjectFor:(NSURLResponse *)response withData:(NSData *)data error:(NSError *__autoreleasing *)error {
     NSParameterAssert(response.textEncodingName);
@@ -152,7 +170,7 @@ NSString *percentEscapeQueryStringWithStringEncoding(NSString *string, NSStringE
 
 @end
 
-@implementation TTXMLResponseSerialization
+@implementation TTXMLSerialization
 
 - (id)responseObjectFor:(NSURLResponse *)response withData:(NSData *)data error:(NSError *__autoreleasing *)error {
     NSParameterAssert(response.textEncodingName);

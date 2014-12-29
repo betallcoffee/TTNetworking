@@ -32,7 +32,7 @@
         [[TTHTTPClient sharedInstanced] GET:@"http://www.baidu.com" parameters:nil completion:^(TTHTTPRequest *request, NSError *error, BOOL isSuccess) {
             if (isSuccess) {
                 NSLog(@"viewController request success %d", i);
-                [label setText:request.responseString];
+                [label setText:request.responseObject];
             } else {
                 NSLog(@"viewController request error:%@", error);
             }

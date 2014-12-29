@@ -8,12 +8,6 @@
 
 #import "TTURLConnection.h"
 
-@protocol TTHTTPRequestSerialization <NSObject>
-
-- (void)request:(NSMutableURLRequest *)request withParam:(NSDictionary *)parameters error:(NSError *__autoreleasing*)error;
-
-@end
-
 @protocol TTHTTPResponseSerialization <NSObject>
 
 - (id)responseObjectFor:(NSURLResponse *)response withData:(NSData *)data error:(NSError *__autoreleasing*)error;
@@ -30,7 +24,6 @@
 @property (nonatomic, readonly) NSMutableData *responseData;
 @property (nonatomic, readonly) id responseObject;
 @property (nonatomic, readonly) NSString *responseString;
-@property (nonatomic, strong) id<TTHTTPRequestSerialization>requestSerialization;
 @property (nonatomic, strong) id<TTHTTPResponseSerialization>responseSerialization;
 
 + (TTHTTPRequest *)GET:(NSString *)URLString
@@ -47,15 +40,14 @@
 
 @end
 
-
-@interface TTJSONResponseSerialization : NSObject<TTHTTPResponseSerialization>
-
-- (id)responseObjectFor:(NSURLResponse *)response withData:(NSData *)data error:(NSError *__autoreleasing*)error;
+@interface TTStringSerialization : NSObject<TTHTTPResponseSerialization>
 
 @end
 
-@interface TTXMLResponseSerialization : NSObject<TTHTTPResponseSerialization>
+@interface TTJSONSerialization : NSObject<TTHTTPResponseSerialization>
 
-- (id)responseObjectFor:(NSURLResponse *)response withData:(NSData *)data error:(NSError *__autoreleasing *)error;
+@end
+
+@interface TTXMLSerialization : NSObject<TTHTTPResponseSerialization>
 
 @end

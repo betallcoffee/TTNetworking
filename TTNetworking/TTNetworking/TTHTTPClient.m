@@ -72,7 +72,7 @@
         TTHTTPLogD(@"TTHTTPClient execute:%@(method:%@/body:%@)", request.request.URL,
               request.request.HTTPMethod,
               [[NSString alloc] initWithData:request.request.HTTPBody encoding:NSUTF8StringEncoding]);
-        if(isSuccess) TTHTTPLogD(@"TTHTTPClient response:%@", request.responseObject);
+        TTHTTPLogV(@"response : %@, MIMEType : %@", request.response, request.response.MIMEType);
         if (completion) {
             completion(request, error, isSuccess);
         }
