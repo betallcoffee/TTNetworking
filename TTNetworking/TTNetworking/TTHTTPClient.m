@@ -18,6 +18,17 @@
 
 @implementation TTHTTPClient
 
++ (instancetype)sharedInstanced {
+    static TTHTTPClient *sharedInstanced;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        if (sharedInstanced == nil) {
+            sharedInstanced = [[TTHTTPClient alloc] init];
+        }
+    });
+    return sharedInstanced;
+}
+
 - (id)init {
     self = [super init];
     if (self) {
@@ -42,6 +53,16 @@
             }
         }
     } while (true);
+}
+
+- (void)GET:(NSString *)URLString parameters:(NSDictionary *)parameters completion:(HTTPCompletion)completion {
+    TTHTTPRequest *request = [TTHTTPRequest GET:URLString parameters:parameters];
+    [self execute:request completion:completion];
+}
+
+- (void)POST:(NSString *)URLString JSONBody:(id)JSONBody completion:(HTTPCompletion)completion {
+    TTHTTPRequest *request = [TTHTTPRequest POST:URLString JSONBody:JSONBody];
+    [self execute:request completion:completion];
 }
 
 - (void)execute:(TTHTTPRequest *)request completion:(HTTPCompletion)completion {

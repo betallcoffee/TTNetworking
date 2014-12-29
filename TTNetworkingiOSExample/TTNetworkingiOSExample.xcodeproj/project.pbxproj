@@ -15,7 +15,7 @@
 		EC3A0B731879A87900F321E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3A0B721879A87900F321E8 /* AppDelegate.m */; };
 		EC3A0B7C1879A87900F321E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3A0B7B1879A87900F321E8 /* ViewController.m */; };
 		EC3A0B7E1879A87900F321E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC3A0B7D1879A87900F321E8 /* Images.xcassets */; };
-		EC42E2CF1A4CFEC40045AADC /* libTTNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E2CE1A4CFEC40045AADC /* libTTNetworking.a */; };
+		ECC1F62E1A513D29000BA98F /* libTTNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1F62D1A513D29000BA98F /* libTTNetworking.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		EC3A0B7B1879A87900F321E8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC3A0B7D1879A87900F321E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC3A0B841879A87900F321E8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		EC42E2CE1A4CFEC40045AADC /* libTTNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTTNetworking.a; path = "../TTNetworking/build/Debug-iphoneos/libTTNetworking.a"; sourceTree = "<group>"; };
+		ECC1F62D1A513D29000BA98F /* libTTNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTTNetworking.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TTNetworking-dggpianzonmjavgtyzpocrqmoico/Build/Products/Debug-iphoneos/libTTNetworking.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC42E2CF1A4CFEC40045AADC /* libTTNetworking.a in Frameworks */,
+				ECC1F62E1A513D29000BA98F /* libTTNetworking.a in Frameworks */,
 				EC3A0B651879A87900F321E8 /* CoreGraphics.framework in Frameworks */,
 				EC3A0B671879A87900F321E8 /* UIKit.framework in Frameworks */,
 				EC3A0B631879A87900F321E8 /* Foundation.framework in Frameworks */,
@@ -71,7 +71,7 @@
 		EC3A0B611879A87900F321E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC42E2CE1A4CFEC40045AADC /* libTTNetworking.a */,
+				ECC1F62D1A513D29000BA98F /* libTTNetworking.a */,
 				EC3A0B621879A87900F321E8 /* Foundation.framework */,
 				EC3A0B641879A87900F321E8 /* CoreGraphics.framework */,
 				EC3A0B661879A87900F321E8 /* UIKit.framework */,
@@ -284,6 +284,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/liang/Workspace/projects/iOS/TTNetworking/TTNetworking/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/TTNetworking-dggpianzonmjavgtyzpocrqmoico/Build/Products/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -307,6 +308,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/liang/Workspace/projects/iOS/TTNetworking/TTNetworking/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/TTNetworking-dggpianzonmjavgtyzpocrqmoico/Build/Products/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

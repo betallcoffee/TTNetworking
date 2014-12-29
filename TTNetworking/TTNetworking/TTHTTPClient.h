@@ -12,6 +12,10 @@
 
 @interface TTHTTPClient : NSObject
 
-- (void)execute:(TTHTTPRequest *)request completion:(HTTPCompletion)completion;
++ (instancetype)sharedInstanced;
+
+- (void)GET:(NSString *)URLString parameters:(NSDictionary *)parameters completion:(HTTPCompletion)completion;
+
+- (void)POST:(NSString *)URLString JSONBody:(id)JSONBody completion:(HTTPCompletion)completion;
 
 @end
