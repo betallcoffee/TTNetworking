@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "TTURLConnection.h"
-#import "TTHTTPRequest.h"
 
 @interface TTHTTPClient : NSObject
 

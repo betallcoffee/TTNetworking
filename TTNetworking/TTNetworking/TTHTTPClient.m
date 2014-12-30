@@ -8,6 +8,7 @@
 
 #import "TTHTTPClient.h"
 #import "TTHTTPLog.h"
+#import "TTHTTPRequest.h"
 
 @interface TTHTTPClient() {
     NSThread *_networkRequestThread;

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC2C21681A528C1E00C5538D /* JSONRPCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2C21601A528C1E00C5538D /* JSONRPCClient.m */; };
+		EC2C21691A528C1E00C5538D /* JSONRPCHTTPWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2C21621A528C1E00C5538D /* JSONRPCHTTPWriter.m */; };
+		EC2C216A1A528C1E00C5538D /* JSONRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2C21651A528C1E00C5538D /* JSONRPCRequest.m */; };
+		EC2C216B1A528C1E00C5538D /* JSONRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2C21671A528C1E00C5538D /* JSONRPCResponse.m */; };
 		EC42E26F1A4CFD940045AADC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E26E1A4CFD940045AADC /* Foundation.framework */; };
 		EC42E27D1A4CFD940045AADC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E27C1A4CFD940045AADC /* XCTest.framework */; };
 		EC42E27E1A4CFD940045AADC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E26E1A4CFD940045AADC /* Foundation.framework */; };
@@ -40,6 +44,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC2C215F1A528C1E00C5538D /* JSONRPCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCClient.h; sourceTree = "<group>"; };
+		EC2C21601A528C1E00C5538D /* JSONRPCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCClient.m; sourceTree = "<group>"; };
+		EC2C21611A528C1E00C5538D /* JSONRPCHTTPWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCHTTPWriter.h; sourceTree = "<group>"; };
+		EC2C21621A528C1E00C5538D /* JSONRPCHTTPWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCHTTPWriter.m; sourceTree = "<group>"; };
+		EC2C21631A528C1E00C5538D /* JSONRPCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCLog.h; sourceTree = "<group>"; };
+		EC2C21641A528C1E00C5538D /* JSONRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCRequest.h; sourceTree = "<group>"; };
+		EC2C21651A528C1E00C5538D /* JSONRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCRequest.m; sourceTree = "<group>"; };
+		EC2C21661A528C1E00C5538D /* JSONRPCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCResponse.h; sourceTree = "<group>"; };
+		EC2C21671A528C1E00C5538D /* JSONRPCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCResponse.m; sourceTree = "<group>"; };
+		EC2C216C1A528C7D00C5538D /* JSONRPC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONRPC.h; sourceTree = "<group>"; };
 		EC42E26B1A4CFD940045AADC /* libTTNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTTNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC42E26E1A4CFD940045AADC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC42E27B1A4CFD940045AADC /* TTNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC2C215E1A528C1E00C5538D /* JSONRPC */ = {
+			isa = PBXGroup;
+			children = (
+				EC2C216C1A528C7D00C5538D /* JSONRPC.h */,
+				EC2C21631A528C1E00C5538D /* JSONRPCLog.h */,
+				EC2C21611A528C1E00C5538D /* JSONRPCHTTPWriter.h */,
+				EC2C21621A528C1E00C5538D /* JSONRPCHTTPWriter.m */,
+				EC2C215F1A528C1E00C5538D /* JSONRPCClient.h */,
+				EC2C21601A528C1E00C5538D /* JSONRPCClient.m */,
+				EC2C21641A528C1E00C5538D /* JSONRPCRequest.h */,
+				EC2C21651A528C1E00C5538D /* JSONRPCRequest.m */,
+				EC2C21661A528C1E00C5538D /* JSONRPCResponse.h */,
+				EC2C21671A528C1E00C5538D /* JSONRPCResponse.m */,
+			);
+			path = JSONRPC;
+			sourceTree = "<group>";
+		};
 		EC42E2621A4CFD940045AADC = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +140,7 @@
 		EC42E2BF1A4CFE910045AADC /* TTNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				EC2C215E1A528C1E00C5538D /* JSONRPC */,
 				EC42E2C01A4CFE910045AADC /* TTHTTPClient.h */,
 				EC42E2C11A4CFE910045AADC /* TTHTTPClient.m */,
 				EC42E2C21A4CFE910045AADC /* TTHTTPLog.h */,
@@ -201,9 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2C21691A528C1E00C5538D /* JSONRPCHTTPWriter.m in Sources */,
+				EC2C216A1A528C1E00C5538D /* JSONRPCRequest.m in Sources */,
+				EC2C21681A528C1E00C5538D /* JSONRPCClient.m in Sources */,
 				EC42E2CA1A4CFE910045AADC /* TTHTTPClient.m in Sources */,
 				EC42E2CB1A4CFE910045AADC /* TTHTTPRequest.m in Sources */,
 				EC42E2CD1A4CFE910045AADC /* TTURLConnection.m in Sources */,
+				EC2C216B1A528C1E00C5538D /* JSONRPCResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
