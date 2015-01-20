@@ -7,8 +7,10 @@
 //
 
 #import "TTHTTPClient.h"
-#import "TTHTTPLog.h"
+#import "TTLog.h"
 #import "TTHTTPRequest.h"
+
+static NSString *const kLogTag = @"TTHTTPClient";
 
 @interface TTHTTPClient() {
     NSThread *_networkRequestThread;
@@ -50,7 +52,7 @@
             @try {
                 [currentRunLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             } @catch (NSException *e) {
-                TTHTTPLogE(@"TTHTTPRequestThread : %@", [e callStackSymbols]);
+                TTLogE(@"TTHTTPRequestThread : %@", [e callStackSymbols]);
             }
         }
     } while (true);
@@ -70,10 +72,10 @@
     NSString *key = [NSString stringWithFormat:@"%p", request];
     TTURLConnection *connection = [[TTURLConnection alloc] initWithRequest:request completion:^(TTHTTPRequest *request, NSError *error, BOOL isSuccess) {
         [_connections removeObjectForKey:key];
-        TTHTTPLogD(@"TTHTTPClient execute:%@(method:%@/body:%@)", request.request.URL,
+        TTLogD(@"TTHTTPClient execute:%@(method:%@/body:%@)", request.request.URL,
               request.request.HTTPMethod,
               [[NSString alloc] initWithData:request.request.HTTPBody encoding:NSUTF8StringEncoding]);
-        TTHTTPLogV(@"response : %@, MIMEType : %@", request.response, request.response.MIMEType);
+        TTLogV(@"response : %@, MIMEType : %@", request.response, request.response.MIMEType);
         if (completion) {
             completion(request, error, isSuccess);
         }

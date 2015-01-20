@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 liang. All rights reserved.
 //
 
+#import "TTLog.h"
 #import "JSONRPCRequest.h"
 #import "JSONRPCClient.h"
-#import "JSONRPCLog.h"
+
+static NSString *const kLogTag = @"JSONRPCRequest";
 
 @interface JSONRPCRequest ()
 {
@@ -36,7 +38,7 @@
                 NSDictionary *param = [value performSelector:@selector(encode) withObject:nil];
                 [_params addObject:param];
             } else {
-                JSONRPCLogW(@"initWithMethod:%@(param:%@) is invalide.", _method, value);
+                TTLogW(@"initWithMethod:%@(param:%@) is invalide.", _method, value);
             }
         }
     }

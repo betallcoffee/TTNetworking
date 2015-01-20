@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 liang. All rights reserved.
 //
 
-#import "JSONRPCLog.h"
 #import "JSONRPCClient.h"
 #import "JSONRPCHTTPWriter.h"
 #import "JSONRPCRequest.h"

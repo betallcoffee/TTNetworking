@@ -51,7 +51,6 @@
 		EC2C21601A528C1E00C5538D /* JSONRPCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCClient.m; sourceTree = "<group>"; };
 		EC2C21611A528C1E00C5538D /* JSONRPCHTTPWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCHTTPWriter.h; sourceTree = "<group>"; };
 		EC2C21621A528C1E00C5538D /* JSONRPCHTTPWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCHTTPWriter.m; sourceTree = "<group>"; };
-		EC2C21631A528C1E00C5538D /* JSONRPCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCLog.h; sourceTree = "<group>"; };
 		EC2C21641A528C1E00C5538D /* JSONRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCRequest.h; sourceTree = "<group>"; };
 		EC2C21651A528C1E00C5538D /* JSONRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONRPCRequest.m; sourceTree = "<group>"; };
 		EC2C21661A528C1E00C5538D /* JSONRPCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRPCResponse.h; sourceTree = "<group>"; };
@@ -64,7 +63,6 @@
 		EC42E27F1A4CFD940045AADC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		ECE61B901A6E202D0025ADAF /* TTHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPClient.h; sourceTree = "<group>"; };
 		ECE61B911A6E202D0025ADAF /* TTHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPClient.m; sourceTree = "<group>"; };
-		ECE61B921A6E202D0025ADAF /* TTHTTPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPLog.h; sourceTree = "<group>"; };
 		ECE61B931A6E202D0025ADAF /* TTHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPRequest.h; sourceTree = "<group>"; };
 		ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPRequest.m; sourceTree = "<group>"; };
 		ECE61B961A6E202D0025ADAF /* TTURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLConnection.h; sourceTree = "<group>"; };
@@ -76,6 +74,7 @@
 		ECE61BA21A6E3E8D0025ADAF /* TTThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTThread.h; sourceTree = "<group>"; };
 		ECE61BA31A6E3E8D0025ADAF /* TTThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTThread.m; sourceTree = "<group>"; };
 		ECE61BA51A6E476E0025ADAF /* TTNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNetworking.h; sourceTree = "<group>"; };
+		ECE61BA61A6E52DA0025ADAF /* TTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				EC2C216C1A528C7D00C5538D /* JSONRPC.h */,
-				EC2C21631A528C1E00C5538D /* JSONRPCLog.h */,
 				EC2C21611A528C1E00C5538D /* JSONRPCHTTPWriter.h */,
 				EC2C21621A528C1E00C5538D /* JSONRPCHTTPWriter.m */,
 				EC2C215F1A528C1E00C5538D /* JSONRPCClient.h */,
@@ -149,6 +147,7 @@
 		EC42E2BF1A4CFE910045AADC /* TTNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				ECE61BA61A6E52DA0025ADAF /* TTLog.h */,
 				ECE61BA51A6E476E0025ADAF /* TTNetworking.h */,
 				ECE61B9F1A6E2B250025ADAF /* TTStream.h */,
 				ECE61BA01A6E2B250025ADAF /* TTStream.m */,
@@ -166,7 +165,6 @@
 			children = (
 				ECE61B901A6E202D0025ADAF /* TTHTTPClient.h */,
 				ECE61B911A6E202D0025ADAF /* TTHTTPClient.m */,
-				ECE61B921A6E202D0025ADAF /* TTHTTPLog.h */,
 				ECE61B931A6E202D0025ADAF /* TTHTTPRequest.h */,
 				ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */,
 				ECE61B961A6E202D0025ADAF /* TTURLConnection.h */,

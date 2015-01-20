@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Availability.h>
-#import "TTHTTPRequest.h"
-#import "TTHTTPClient.h"
+#import "HTTP/TTHTTPRequest.h"
+#import "HTTP/TTHTTPClient.h"
 #import "JSONRPC/JSONRPC.h"
 

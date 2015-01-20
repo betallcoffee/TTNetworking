@@ -7,9 +7,18 @@
 //
 
 #import "TTStream.h"
+#import "TTThread.h"
+
+typedef enum : NSUInteger {
+    eStatusInit,
+    eStatusConnecting,
+    eStatusOpen,
+    eStatusClosing,
+} eStreamStatus;
 
 @interface TTStream ()
 {
+    eStreamStatus _status;
     dispatch_queue_t _delegateDispatchQueue;
     dispatch_queue_t _workQueue;
     
@@ -30,6 +39,7 @@
 - (instancetype)initWithHost:(NSString *)host AndPort:(UInt32)port {
     self = [super init];
     if (self) {
+        _status = eStatusInit;
         _host = host;
         _port= port;
         _workQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
@@ -49,6 +59,11 @@
 }
 
 - (void)open {
+    if (_status != eStatusInit) {
+        return;
+    }
+    _status = eStatusConnecting;
+    
     CFReadStreamRef readStream = NULL;
     CFWriteStreamRef writeStream = NULL;
     
@@ -59,6 +74,9 @@
     
     _outputStream.delegate = self;
     _inputStream.delegate = self;
+    
+    [_outputStream scheduleInRunLoop:[NSRunLoop runLoop] forMode:NSDefaultRunLoopMode];
+    [_inputStream scheduleInRunLoop:[NSRunLoop runLoop] forMode:NSDefaultRunLoopMode];
 }
 
 - (void)close {
@@ -72,7 +90,32 @@
 #pragma mark NSStreamDelegate
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode {
-    
+    dispatch_async(_workQueue, ^{
+        switch (eventCode) {
+            case NSStreamEventOpenCompleted: {
+                break;
+            }
+                
+            case NSStreamEventErrorOccurred: {
+                break;
+            }
+                
+            case NSStreamEventEndEncountered: {
+                break;
+            }
+                
+            case NSStreamEventHasBytesAvailable: {
+                break;
+            }
+                
+            case NSStreamEventHasSpaceAvailable: {
+                break;
+            }
+                
+            default:
+                break;
+        }
+    });
 }
 
 @end
