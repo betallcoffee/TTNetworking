@@ -19,6 +19,9 @@
 		ECE61B981A6E202D0025ADAF /* TTHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B911A6E202D0025ADAF /* TTHTTPClient.m */; };
 		ECE61B991A6E202D0025ADAF /* TTHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */; };
 		ECE61B9A1A6E202D0025ADAF /* TTURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B971A6E202D0025ADAF /* TTURLConnection.m */; };
+		ECE61B9E1A6E21B20025ADAF /* TTWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B9D1A6E21B20025ADAF /* TTWebSocket.m */; };
+		ECE61BA11A6E2B250025ADAF /* TTStream.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61BA01A6E2B250025ADAF /* TTStream.m */; };
+		ECE61BA41A6E3E8D0025ADAF /* TTThread.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61BA31A6E3E8D0025ADAF /* TTThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +67,15 @@
 		ECE61B921A6E202D0025ADAF /* TTHTTPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPLog.h; sourceTree = "<group>"; };
 		ECE61B931A6E202D0025ADAF /* TTHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPRequest.h; sourceTree = "<group>"; };
 		ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPRequest.m; sourceTree = "<group>"; };
-		ECE61B951A6E202D0025ADAF /* TTNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNetworking.h; sourceTree = "<group>"; };
 		ECE61B961A6E202D0025ADAF /* TTURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLConnection.h; sourceTree = "<group>"; };
 		ECE61B971A6E202D0025ADAF /* TTURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTURLConnection.m; sourceTree = "<group>"; };
+		ECE61B9C1A6E21B20025ADAF /* TTWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWebSocket.h; sourceTree = "<group>"; };
+		ECE61B9D1A6E21B20025ADAF /* TTWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWebSocket.m; sourceTree = "<group>"; };
+		ECE61B9F1A6E2B250025ADAF /* TTStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTStream.h; sourceTree = "<group>"; };
+		ECE61BA01A6E2B250025ADAF /* TTStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTStream.m; sourceTree = "<group>"; };
+		ECE61BA21A6E3E8D0025ADAF /* TTThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTThread.h; sourceTree = "<group>"; };
+		ECE61BA31A6E3E8D0025ADAF /* TTThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTThread.m; sourceTree = "<group>"; };
+		ECE61BA51A6E476E0025ADAF /* TTNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNetworking.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +149,14 @@
 		EC42E2BF1A4CFE910045AADC /* TTNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				ECE61BA51A6E476E0025ADAF /* TTNetworking.h */,
+				ECE61B9F1A6E2B250025ADAF /* TTStream.h */,
+				ECE61BA01A6E2B250025ADAF /* TTStream.m */,
 				ECE61B9B1A6E20490025ADAF /* WebSocket */,
 				ECE61B8F1A6E202D0025ADAF /* HTTP */,
 				EC2C215E1A528C1E00C5538D /* JSONRPC */,
+				ECE61BA21A6E3E8D0025ADAF /* TTThread.h */,
+				ECE61BA31A6E3E8D0025ADAF /* TTThread.m */,
 			);
 			path = TTNetworking;
 			sourceTree = "<group>";
@@ -155,7 +169,6 @@
 				ECE61B921A6E202D0025ADAF /* TTHTTPLog.h */,
 				ECE61B931A6E202D0025ADAF /* TTHTTPRequest.h */,
 				ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */,
-				ECE61B951A6E202D0025ADAF /* TTNetworking.h */,
 				ECE61B961A6E202D0025ADAF /* TTURLConnection.h */,
 				ECE61B971A6E202D0025ADAF /* TTURLConnection.m */,
 			);
@@ -165,6 +178,8 @@
 		ECE61B9B1A6E20490025ADAF /* WebSocket */ = {
 			isa = PBXGroup;
 			children = (
+				ECE61B9C1A6E21B20025ADAF /* TTWebSocket.h */,
+				ECE61B9D1A6E21B20025ADAF /* TTWebSocket.m */,
 			);
 			path = WebSocket;
 			sourceTree = "<group>";
@@ -253,9 +268,12 @@
 				EC2C216A1A528C1E00C5538D /* JSONRPCRequest.m in Sources */,
 				EC2C21681A528C1E00C5538D /* JSONRPCClient.m in Sources */,
 				ECE61B991A6E202D0025ADAF /* TTHTTPRequest.m in Sources */,
+				ECE61BA11A6E2B250025ADAF /* TTStream.m in Sources */,
 				ECE61B9A1A6E202D0025ADAF /* TTURLConnection.m in Sources */,
 				ECE61B981A6E202D0025ADAF /* TTHTTPClient.m in Sources */,
+				ECE61BA41A6E3E8D0025ADAF /* TTThread.m in Sources */,
 				EC2C216B1A528C1E00C5538D /* JSONRPCResponse.m in Sources */,
+				ECE61B9E1A6E21B20025ADAF /* TTWebSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
