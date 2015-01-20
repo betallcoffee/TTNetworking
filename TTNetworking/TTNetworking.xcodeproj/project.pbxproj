@@ -16,9 +16,9 @@
 		EC42E27E1A4CFD940045AADC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E26E1A4CFD940045AADC /* Foundation.framework */; };
 		EC42E2801A4CFD940045AADC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E27F1A4CFD940045AADC /* UIKit.framework */; };
 		EC42E2831A4CFD940045AADC /* libTTNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC42E26B1A4CFD940045AADC /* libTTNetworking.a */; };
-		EC42E2CA1A4CFE910045AADC /* TTHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC42E2C11A4CFE910045AADC /* TTHTTPClient.m */; };
-		EC42E2CB1A4CFE910045AADC /* TTHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EC42E2C41A4CFE910045AADC /* TTHTTPRequest.m */; };
-		EC42E2CD1A4CFE910045AADC /* TTURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EC42E2C91A4CFE910045AADC /* TTURLConnection.m */; };
+		ECE61B981A6E202D0025ADAF /* TTHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B911A6E202D0025ADAF /* TTHTTPClient.m */; };
+		ECE61B991A6E202D0025ADAF /* TTHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */; };
+		ECE61B9A1A6E202D0025ADAF /* TTURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B971A6E202D0025ADAF /* TTURLConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,14 +59,14 @@
 		EC42E27B1A4CFD940045AADC /* TTNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC42E27C1A4CFD940045AADC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EC42E27F1A4CFD940045AADC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		EC42E2C01A4CFE910045AADC /* TTHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPClient.h; sourceTree = "<group>"; };
-		EC42E2C11A4CFE910045AADC /* TTHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPClient.m; sourceTree = "<group>"; };
-		EC42E2C21A4CFE910045AADC /* TTHTTPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPLog.h; sourceTree = "<group>"; };
-		EC42E2C31A4CFE910045AADC /* TTHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPRequest.h; sourceTree = "<group>"; };
-		EC42E2C41A4CFE910045AADC /* TTHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPRequest.m; sourceTree = "<group>"; };
-		EC42E2C71A4CFE910045AADC /* TTNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNetworking.h; sourceTree = "<group>"; };
-		EC42E2C81A4CFE910045AADC /* TTURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLConnection.h; sourceTree = "<group>"; };
-		EC42E2C91A4CFE910045AADC /* TTURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTURLConnection.m; sourceTree = "<group>"; };
+		ECE61B901A6E202D0025ADAF /* TTHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPClient.h; sourceTree = "<group>"; };
+		ECE61B911A6E202D0025ADAF /* TTHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPClient.m; sourceTree = "<group>"; };
+		ECE61B921A6E202D0025ADAF /* TTHTTPLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPLog.h; sourceTree = "<group>"; };
+		ECE61B931A6E202D0025ADAF /* TTHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHTTPRequest.h; sourceTree = "<group>"; };
+		ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHTTPRequest.m; sourceTree = "<group>"; };
+		ECE61B951A6E202D0025ADAF /* TTNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNetworking.h; sourceTree = "<group>"; };
+		ECE61B961A6E202D0025ADAF /* TTURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTURLConnection.h; sourceTree = "<group>"; };
+		ECE61B971A6E202D0025ADAF /* TTURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTURLConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,17 +140,33 @@
 		EC42E2BF1A4CFE910045AADC /* TTNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				ECE61B9B1A6E20490025ADAF /* WebSocket */,
+				ECE61B8F1A6E202D0025ADAF /* HTTP */,
 				EC2C215E1A528C1E00C5538D /* JSONRPC */,
-				EC42E2C01A4CFE910045AADC /* TTHTTPClient.h */,
-				EC42E2C11A4CFE910045AADC /* TTHTTPClient.m */,
-				EC42E2C21A4CFE910045AADC /* TTHTTPLog.h */,
-				EC42E2C31A4CFE910045AADC /* TTHTTPRequest.h */,
-				EC42E2C41A4CFE910045AADC /* TTHTTPRequest.m */,
-				EC42E2C71A4CFE910045AADC /* TTNetworking.h */,
-				EC42E2C81A4CFE910045AADC /* TTURLConnection.h */,
-				EC42E2C91A4CFE910045AADC /* TTURLConnection.m */,
 			);
 			path = TTNetworking;
+			sourceTree = "<group>";
+		};
+		ECE61B8F1A6E202D0025ADAF /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				ECE61B901A6E202D0025ADAF /* TTHTTPClient.h */,
+				ECE61B911A6E202D0025ADAF /* TTHTTPClient.m */,
+				ECE61B921A6E202D0025ADAF /* TTHTTPLog.h */,
+				ECE61B931A6E202D0025ADAF /* TTHTTPRequest.h */,
+				ECE61B941A6E202D0025ADAF /* TTHTTPRequest.m */,
+				ECE61B951A6E202D0025ADAF /* TTNetworking.h */,
+				ECE61B961A6E202D0025ADAF /* TTURLConnection.h */,
+				ECE61B971A6E202D0025ADAF /* TTURLConnection.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		ECE61B9B1A6E20490025ADAF /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +252,9 @@
 				EC2C21691A528C1E00C5538D /* JSONRPCHTTPWriter.m in Sources */,
 				EC2C216A1A528C1E00C5538D /* JSONRPCRequest.m in Sources */,
 				EC2C21681A528C1E00C5538D /* JSONRPCClient.m in Sources */,
-				EC42E2CA1A4CFE910045AADC /* TTHTTPClient.m in Sources */,
-				EC42E2CB1A4CFE910045AADC /* TTHTTPRequest.m in Sources */,
-				EC42E2CD1A4CFE910045AADC /* TTURLConnection.m in Sources */,
+				ECE61B991A6E202D0025ADAF /* TTHTTPRequest.m in Sources */,
+				ECE61B9A1A6E202D0025ADAF /* TTURLConnection.m in Sources */,
+				ECE61B981A6E202D0025ADAF /* TTHTTPClient.m in Sources */,
 				EC2C216B1A528C1E00C5538D /* JSONRPCResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
