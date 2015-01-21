@@ -10,13 +10,13 @@
 
 @class TTStream;
 
-typedef size_t(^scannerBlock)(TTStream * stream, NSData *data);
+typedef NSUInteger(^ScannerBlock)(TTStream * stream, NSData *data);
 
 @protocol TTStreamDelegate <NSObject>
 
 - (void)onOpen;
 - (void)onClose;
-- (void)onFailed;
+- (void)onFailedCode:(NSInteger)code message:(NSString *)message;
 
 @end
 
@@ -27,8 +27,9 @@ typedef size_t(^scannerBlock)(TTStream * stream, NSData *data);
 @property (nonatomic, assign) UInt32 port;
 
 - (instancetype)initWithHost:(NSString *)host AndPort:(UInt32)port;
+- (void)setNextScanner:(ScannerBlock)scanner;
 - (void)open;
 - (void)close;
-- (void)setNextScanner:(scannerBlock)scanner;
+- (void)send;
 
 @end
